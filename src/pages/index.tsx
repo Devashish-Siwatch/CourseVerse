@@ -6,6 +6,7 @@ import { MainLayout } from '@/components/layout'
 
 import { useAuthState } from "react-firebase-hooks/auth";
 import firebase from "../firebase/clientApp";
+import Auth from "../components/Auth";
 
 
 const DynamicHomeHero = dynamic(() => import('../components/home/hero'))
@@ -17,9 +18,10 @@ const DynamicHomeNewsLetter = dynamic(() => import('../components/home/newslette
 
 const Home: NextPageWithLayout = () => {
     // Destructure user, loading, and error out of the hook.  
-    const [user, loading1, error] = useAuthState(firebase.auth() as any);
+    const [user, loading, error] = useAuthState(firebase.auth() as any);
     // console.log the current user and loading status
-    console.log("Loading:", loading1, "|", "Current user:", user);
+    console.log("Loading:", loading, "|", "Current user:", user);
+    if(user)
   return (
     <>
       <DynamicHomeHero />
@@ -30,6 +32,7 @@ const Home: NextPageWithLayout = () => {
       <DynamicHomeNewsLetter />
     </>
   )
+  return (<Auth />)
 }
 
 Home.getLayout = (page) => <MainLayout>{page}</MainLayout>
