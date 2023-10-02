@@ -89,9 +89,7 @@ You can start building your course website by extending the existing components 
 This project is deployed at https://course-verse.vercel.app/.
 You can deploy this project to your preferred hosting platform, such as Vercel, Netlify, or Firebase Hosting. Make sure to set up environment variables on your hosting platform for Firebase configuration.
 
-## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 - Basic UI taken from https://github.com/hiriski.
